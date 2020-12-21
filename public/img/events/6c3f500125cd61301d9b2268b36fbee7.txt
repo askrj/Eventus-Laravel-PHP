@@ -1,0 +1,54 @@
+SELECT CD_USUARIO, 
+format(PC_EM_FAB,2,'de_DE') PC_EM_FAB, format(PC_EM_VEN,2,'de_DE') PC_EM_VEN, format(PC_FR_FAB,2,'de_DE') PC_FR_FAB, format(PC_FR_VEN,2,'de_DE') PC_FR_VEN,
+date_format(VIGENCIA,'%d/%m/%Y') VIGENCIA,
+CASE IDENTIF when 'A' then 'ATUALIZAÇÃO SUSPENSA' when 'D' then 'DESCONTINUADO' when 'F' then 'FABRICA' when 'L' then 'FORA DE LINHA'  when'V' then 'VENDA' END AS IDENTIF
+FROM SIMPRONOVO WHERE CD_USUARIO = 0005440068
+
+
+
+
+SELECT CD_USUARIO, 
+format(PC_EM_FAB,2,'de_DE') PC_EM_FAB, format(PC_EM_VEN,2,'de_DE') PC_EM_VEN, format(PC_FR_FAB,2,'de_DE') PC_FR_FAB, format(PC_FR_VEN,2,'de_DE') PC_FR_VEN,
+date_format(VIGENCIA,'%d/%m/%Y') VIGENCIA,
+CASE IDENTIF when 'A' then 'ATUALIZAÇÃO SUSPENSA' when 'D' then 'DESCONTINUADO' when 'F' then 'FABRICA' when 'L' then 'FORA DE LINHA'  when'V' then 'VENDA' END AS IDENTIF
+FROM SIMPRONOVO  limit 6 
+
+
+<?php
+			while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
+				?>
+				<tr>
+					<th><?php echo $row_usuario['id']; ?></th>
+					<td><?php echo $row_usuario['nome']; ?></td>
+					<td><?php echo $row_usuario['email']; ?></td>
+					<td>
+						<button type="button" class="btn btn-outline-primary view_data" id="<?php echo $row_usuario['id']; ?>">Visualizar</button>
+					</td>
+				</tr>
+				<?php
+			}?>
+
+
+
+
+
+
+
+
+
+FK_CodigoOperadora_Operadora
+
+/****** Script do comando SelectTopNRows de SSMS  ******/
+SELECT TOP (1000) [id]
+      ,[ans]
+      ,[cnpj]
+      ,[nome]
+      ,[email]
+      ,[contato]
+      ,[telefone]
+      ,[celular]
+      ,[site]
+  FROM [askmed].[dbo].[operadora]
+
+
+@Alex1613@
